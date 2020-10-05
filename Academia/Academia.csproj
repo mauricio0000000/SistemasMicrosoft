@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0A4EC80E-7EA4-4D56-AAD1-D5492068D6A9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Academia</RootNamespace>
+    <AssemblyName>Academia</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DAL\AlunoDAO.cs" />
+    <Compile Include="DAL\AvaliacaoDAO.cs" />
+    <Compile Include="DAL\ImcDAO.cs" />
+    <Compile Include="DAL\ProfessorDAO.cs" />
+    <Compile Include="DAL\SingletonContext.cs" />
+    <Compile Include="Migrations\201909161714520_CriarBanco.cs" />
+    <Compile Include="Migrations\201909161714520_CriarBanco.Designer.cs">
+      <DependentUpon>201909161714520_CriarBanco.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909170414345_SemDataNascimento.cs" />
+    <Compile Include="Migrations\201909170414345_SemDataNascimento.Designer.cs">
+      <DependentUpon>201909170414345_SemDataNascimento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909191821083_senha.cs" />
+    <Compile Include="Migrations\201909191821083_senha.Designer.cs">
+      <DependentUpon>201909191821083_senha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909231251559_login.cs" />
+    <Compile Include="Migrations\201909231251559_login.Designer.cs">
+      <DependentUpon>201909231251559_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909231952170_dataEimc.cs" />
+    <Compile Include="Migrations\201909231952170_dataEimc.Designer.cs">
+      <DependentUpon>201909231952170_dataEimc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909232235021_idCliente.cs" />
+    <Compile Include="Migrations\201909232235021_idCliente.designer.cs">
+      <DependentUpon>201909232235021_idCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909241843452_resultadoImc.cs" />
+    <Compile Include="Migrations\201909241843452_resultadoImc.designer.cs">
+      <DependentUpon>201909241843452_resultadoImc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909271649367_Avaliacao.cs" />
+    <Compile Include="Migrations\201909271649367_Avaliacao.designer.cs">
+      <DependentUpon>201909271649367_Avaliacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909301542262_foreingKey.cs" />
+    <Compile Include="Migrations\201909301542262_foreingKey.designer.cs">
+      <DependentUpon>201909301542262_foreingKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909301556299_datetime2.cs" />
+    <Compile Include="Migrations\201909301556299_datetime2.designer.cs">
+      <DependentUpon>201909301556299_datetime2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909301602473_datetime21.cs" />
+    <Compile Include="Migrations\201909301602473_datetime21.designer.cs">
+      <DependentUpon>201909301602473_datetime21.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909301607197_datatime211.cs" />
+    <Compile Include="Migrations\201909301607197_datatime211.designer.cs">
+      <DependentUpon>201909301607197_datatime211.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909301650365_data1.cs" />
+    <Compile Include="Migrations\201909301650365_data1.designer.cs">
+      <DependentUpon>201909301650365_data1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909301801203_smalldatetime.cs" />
+    <Compile Include="Migrations\201909301801203_smalldatetime.designer.cs">
+      <DependentUpon>201909301801203_smalldatetime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909301814194_arrumandodata.cs" />
+    <Compile Include="Migrations\201909301814194_arrumandodata.designer.cs">
+      <DependentUpon>201909301814194_arrumandodata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909301846470_imcAtualizado.cs" />
+    <Compile Include="Migrations\201909301846470_imcAtualizado.designer.cs">
+      <DependentUpon>201909301846470_imcAtualizado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910021202100_idProfAlunoNull.cs" />
+    <Compile Include="Migrations\201910021202100_idProfAlunoNull.designer.cs">
+      <DependentUpon>201910021202100_idProfAlunoNull.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910042331038_FaculQuinta.cs" />
+    <Compile Include="Migrations\201910042331038_FaculQuinta.designer.cs">
+      <DependentUpon>201910042331038_FaculQuinta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910050025481_faculSex.cs" />
+    <Compile Include="Migrations\201910050025481_faculSex.designer.cs">
+      <DependentUpon>201910050025481_faculSex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910050036309_faculSex01.cs" />
+    <Compile Include="Migrations\201910050036309_faculSex01.designer.cs">
+      <DependentUpon>201910050036309_faculSex01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910061837431_testes01.cs" />
+    <Compile Include="Migrations\201910061837431_testes01.designer.cs">
+      <DependentUpon>201910061837431_testes01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910061955253_testes011.cs" />
+    <Compile Include="Migrations\201910061955253_testes011.designer.cs">
+      <DependentUpon>201910061955253_testes011.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Avaliacao.cs" />
+    <Compile Include="Models\Context.cs" />
+    <Compile Include="Models\Imc.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\Pessoa.cs" />
+    <Compile Include="Views\AgendaAvaliacao.xaml.cs">
+      <DependentUpon>AgendaAvaliacao.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmCadastrarAvaliacao.xaml.cs">
+      <DependentUpon>frmCadastrarAvaliacao.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmCadastroAluno.xaml.cs">
+      <DependentUpon>frmCadastroAluno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmCadastroProfessor.xaml.cs">
+      <DependentUpon>frmCadastroProfessor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmImc.xaml.cs">
+      <DependentUpon>frmImc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmLogin.xaml.cs">
+      <DependentUpon>frmLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmPrincipal.xaml.cs">
+      <DependentUpon>frmPrincipal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmProfile.xaml.cs">
+      <DependentUpon>frmProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\frmVisualizarAvaliacao.xaml.cs">
+      <DependentUpon>frmVisualizarAvaliacao.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Aluno.cs" />
+    <Compile Include="Models\Professor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Migrations\201909161714520_CriarBanco.resx">
+      <DependentUpon>201909161714520_CriarBanco.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909170414345_SemDataNascimento.resx">
+      <DependentUpon>201909170414345_SemDataNascimento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909191821083_senha.resx">
+      <DependentUpon>201909191821083_senha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909231251559_login.resx">
+      <DependentUpon>201909231251559_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909231952170_dataEimc.resx">
+      <DependentUpon>201909231952170_dataEimc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909232235021_idCliente.resx">
+      <DependentUpon>201909232235021_idCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909241843452_resultadoImc.resx">
+      <DependentUpon>201909241843452_resultadoImc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909271649367_Avaliacao.resx">
+      <DependentUpon>201909271649367_Avaliacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909301542262_foreingKey.resx">
+      <DependentUpon>201909301542262_foreingKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909301556299_datetime2.resx">
+      <DependentUpon>201909301556299_datetime2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909301602473_datetime21.resx">
+      <DependentUpon>201909301602473_datetime21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909301607197_datatime211.resx">
+      <DependentUpon>201909301607197_datatime211.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909301650365_data1.resx">
+      <DependentUpon>201909301650365_data1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909301801203_smalldatetime.resx">
+      <DependentUpon>201909301801203_smalldatetime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909301814194_arrumandodata.resx">
+      <DependentUpon>201909301814194_arrumandodata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909301846470_imcAtualizado.resx">
+      <DependentUpon>201909301846470_imcAtualizado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910021202100_idProfAlunoNull.resx">
+      <DependentUpon>201910021202100_idProfAlunoNull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910042331038_FaculQuinta.resx">
+      <DependentUpon>201910042331038_FaculQuinta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910050025481_faculSex.resx">
+      <DependentUpon>201910050025481_faculSex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910050036309_faculSex01.resx">
+      <DependentUpon>201910050036309_faculSex01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910061837431_testes01.resx">
+      <DependentUpon>201910061837431_testes01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910061955253_testes011.resx">
+      <DependentUpon>201910061955253_testes011.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Page Include="Views\AgendaAvaliacao.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\frmCadastrarAvaliacao.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\frmCadastroAluno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\frmCadastroProfessor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\frmImc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\frmLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\frmPrincipal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\frmProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\frmVisualizarAvaliacao.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este projeto faz referência a pacotes do NuGet que não estão presentes neste computador. Use a Restauração de Pacotes do NuGet para baixá-los.  Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkID=322105. O arquivo ausente é {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+</Project>

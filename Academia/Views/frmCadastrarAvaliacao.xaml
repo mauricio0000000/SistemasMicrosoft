@@ -1,0 +1,24 @@
+﻿<Window x:Class="Academia.Views.frmCadastrarAvaliacao"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Academia.Views"
+        mc:Ignorable="d"
+        Title="Marcar Avaliação" Height="343.081" Width="404.047" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <DatePicker x:Name="txtData" HorizontalAlignment="Left" Margin="59,98,0,0" VerticalAlignment="Top"/>
+        <Label Content="Data" HorizontalAlignment="Left" Margin="59,67,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnMarcar" Content="Marcar" HorizontalAlignment="Left" Margin="59,191,0,0" VerticalAlignment="Top" Width="75" Click="btnMarcar_Click"/>
+        <Label Content="Professor" HorizontalAlignment="Left" Margin="59,127,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cboProfessor" HorizontalAlignment="Left" Margin="59,153,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cboHoras" HorizontalAlignment="Left" Margin="214,98,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="9:00" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="12:00" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="15:00" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="18:00" HorizontalAlignment="Left" Width="118"/>
+        </ComboBox>
+        <Label Content="Hora" HorizontalAlignment="Left" Margin="214,67,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,29 @@
+﻿<Window x:Class="Academia.Views.frmImc"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Academia.Views"
+        mc:Ignorable="d"
+        Title="Índice de Massa Corporal" Height="450" Width="800" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Grid>
+        <Label x:Name="lblPeso" Content="Peso" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtPeso" HorizontalAlignment="Left" Height="23" Margin="10,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="lblAltura" Content="Altura" HorizontalAlignment="Left" Margin="10,59,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtAltura" HorizontalAlignment="Left" Height="23" Margin="10,85,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBlock x:Name="txtKg" HorizontalAlignment="Left" Margin="135,43,0,0" TextWrapping="Wrap" Text="kg" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtCm" HorizontalAlignment="Left" Margin="135,92,0,0" TextWrapping="Wrap" Text="cm" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtImc" Margin="246,59,0,0" TextWrapping="Wrap" Text="IMC= " VerticalAlignment="Top" Height="26" Width="160" HorizontalAlignment="Left" FontSize="20"/>
+        <Button x:Name="btnCalcularImc" Content="Calcular" HorizontalAlignment="Left" Margin="33,124,0,0" VerticalAlignment="Top" Width="75" Click="btnCalcularImc_Click"/>
+        <DataGrid x:Name="cboImc" HorizontalAlignment="Center" AutoGenerateColumns="False" Height="230" Margin="0,165,0,0" VerticalAlignment="Top" Width="750" CanUserResizeColumns="False" BorderThickness="2" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding peso}" Header="Peso" Width="150"/>
+                <DataGridTextColumn Binding="{Binding altura}" Header="Altura" Width="150"/>
+                <DataGridTextColumn Binding="{Binding criadoEm}" Header="Data" Width="150"/>
+                <DataGridTextColumn Binding="{Binding imcResult}" Header="Imc" Width="150"/>
+                <DataGridTextColumn Binding="{Binding resultado}" Header="Resultado" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
